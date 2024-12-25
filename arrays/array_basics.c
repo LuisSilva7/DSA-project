@@ -24,7 +24,7 @@ int main() {
     int arr[5];
     initialize_array(arr, 5);
     print_array(arr, 5);
-
+    printf("\n");
     set_value_at_index(arr, 2, 100);
     print_array(arr, 5);
 
