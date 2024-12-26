@@ -5,6 +5,7 @@ This repository contains three C programs demonstrating operations on **Singly L
 ## Singly Linked List Operations
 
 - **`create_node`**: Creates a new node with the given value and sets the `next` pointer to `NULL`.
+- **`traverse`**: Traverses the list and counts the number of nodes.
 - **`insert_at_beginning`**: Inserts a new node at the beginning of the list, updating the head of the list.
 - **`insert_at_middle`**: Inserts a new node at the middle position of the list based on the list's size.
 - **`insert_at_end`**: Inserts a new node at the end of the list by traversing to the last node and appending the new node.
@@ -14,6 +15,7 @@ This repository contains three C programs demonstrating operations on **Singly L
 **Complexity:**
 
 - `create_node`: O(1)
+- `traverse`: O(n)
 - `insert_at_beginning`: O(1)
 - `insert_at_middle`: O(n)
 - `insert_at_end`: O(n)
@@ -23,6 +25,7 @@ This repository contains three C programs demonstrating operations on **Singly L
 ## Doubly Linked List Operations
 
 - **`create_node`**: Creates a new node with the given value and sets both `prev` and `next` pointers to `NULL`.
+- **`traverse`**: Traverses the list and counts the number of nodes.
 - **`insert_at_beginning`**: Inserts a new node at the beginning of the list, updating the head of the list and adjusting the `prev` and `next` pointers accordingly.
 - **`insert_at_middle`**: Inserts a new node at the middle of the list, adjusting the `prev` and `next` pointers for the adjacent nodes.
 - **`insert_at_end`**: Inserts a new node at the end of the list by traversing to the last node and updating the `prev` and `next` pointers.
@@ -32,6 +35,7 @@ This repository contains three C programs demonstrating operations on **Singly L
 **Complexity:**
 
 - `create_node`: O(1)
+- `traverse`: O(n)
 - `insert_at_beginning`: O(1)
 - `insert_at_middle`: O(n)
 - `insert_at_end`: O(n)
@@ -41,6 +45,7 @@ This repository contains three C programs demonstrating operations on **Singly L
 ## Circular Linked List Operations
 
 - **`create_node`**: Creates a new node with the given value and links it to itself (making it circular).
+- **`traverse`**: Traverses the circular list and counts the number of nodes.
 - **`insert_at_beginning`**: Inserts a new node at the beginning of the circular list, adjusting the `prev` and `next` pointers and updating the head.
 - **`insert_at_middle`**: Inserts a new node at the middle of the circular list, updating the `prev` and `next` pointers of the surrounding nodes.
 - **`insert_at_end`**: Inserts a new node at the end of the circular list, ensuring the last node's `next` pointer points back to the head.
@@ -50,6 +55,7 @@ This repository contains three C programs demonstrating operations on **Singly L
 **Complexity:**
 
 - `create_node`: O(1)
+- `traverse`: O(n)
 - `insert_at_beginning`: O(1)
 - `insert_at_middle`: O(n)
 - `insert_at_end`: O(n)

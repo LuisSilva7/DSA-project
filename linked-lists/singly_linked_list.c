@@ -6,6 +6,7 @@ typedef struct Node {
     struct Node *next;
 } Node;
 
+// Complexity: O(1)
 Node *create_node(int value) {
     Node *new_node = (Node*)malloc(sizeof(Node));
     if(new_node == NULL) {
@@ -19,6 +20,7 @@ Node *create_node(int value) {
     return new_node;
 }
 
+// Complexity: O(n)
 int traverse(Node *head) {
     Node *current = head;
     int count = 0;
@@ -31,12 +33,14 @@ int traverse(Node *head) {
     return count;
 }
 
+// Complexity: O(1)
 void insert_at_beginning(Node **head, int value) {
     Node *new_node = create_node(value);
     new_node->next = *head;
     *head = new_node;
 }
 
+// Complexity: O(n)
 void insert_at_middle(Node **head, int value) {
     Node *new_node = create_node(value);
     Node *current = *head;
@@ -51,6 +55,7 @@ void insert_at_middle(Node **head, int value) {
     current->next = new_node;
 }
 
+// Complexity: O(n)
 void insert_at_end(Node **head, int value) {
     Node *new_node = create_node(value);
     Node *current = *head;
