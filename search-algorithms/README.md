@@ -26,8 +26,6 @@ Linear search sequentially checks each element in the array until it finds the t
 
 Binary search works by repeatedly dividing the search interval in half. If the value of the target is less than the value in the middle of the interval, it narrows the interval to the lower half. If the target is greater, it narrows it to the upper half. This process continues until the target value is found or the interval is empty. Binary search requires a sorted array.
 
----
-
 ## Comparison
 
 | Algorithm         | Time Complexity | Best Case | Average Case | Worst Case |

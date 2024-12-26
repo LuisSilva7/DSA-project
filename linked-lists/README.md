@@ -62,6 +62,4 @@ This repository contains three C programs demonstrating operations on **Singly L
 - `delete`: O(n)
 - `print_list`: O(n)
 
----
-
 These programs demonstrate basic operations for singly, doubly, and circular linked lists, highlighting node insertion, deletion, traversal, and printing operations in C.

@@ -92,8 +92,6 @@ This implementation uses a linked list to represent the queue. Each element is d
 
 This implementation uses an array to represent a **Min-Heap** priority queue. The smallest element has the highest priority and is always at the front. Insertion and extraction are done while maintaining the heap property. The time complexity for insertion and extraction is O(n) due to shifting elements in the array.
 
----
-
 ## Comparison
 
 | Queue Type                 | Time Complexity | Best Case | Average Case | Worst Case |

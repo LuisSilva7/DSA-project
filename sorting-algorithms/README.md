@@ -62,8 +62,6 @@ Merge sort is a divide-and-conquer algorithm that divides the array into two hal
 
 Selection sort works by finding the smallest (or largest) element in the unsorted portion of the array and swapping it with the first unsorted element. It performs poorly on large lists due to its O(n^2) time complexity but is easy to implement.
 
----
-
 ## Comparison
 
 | Algorithm          | Time Complexity | Best Case  | Average Case | Worst Case |

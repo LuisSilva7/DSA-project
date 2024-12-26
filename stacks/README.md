@@ -46,8 +46,6 @@ This implementation uses a static array to represent the stack. The stack is man
 
 This implementation uses a linked list to represent the stack. Each element is dynamically allocated as a node, allowing efficient push and pop operations without the need for a fixed-size array. The stack can grow and shrink dynamically based on the number of elements.
 
----
-
 ## Comparison
 
 | Stack Type              | Time Complexity | Best Case | Average Case | Worst Case |
