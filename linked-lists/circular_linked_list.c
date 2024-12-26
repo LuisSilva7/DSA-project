@@ -2,55 +2,129 @@
 #include <stdlib.h>
 
 typedef struct Node {
-    int value;
-    struct Node* next;
+    int data;
+    struct Node *prev;
+    struct Node *next;
 } Node;
 
-void insert_at_beginning(Node **head, int value) {
+Node *create_node(int value) {
     Node *new_node = (Node*)malloc(sizeof(Node));
-    new_node->value = value;
-    
+    if(new_node == NULL) {
+        printf("Memory allocation failed\n");
+        exit(1);
+    }
+    new_node->data = value;
+    new_node->prev = new_node;
+    new_node->next = new_node;
+
+    return new_node;
+}
+
+int traverse(Node *head) {
+    Node *current = head;
+    int count = 0;
+
+    if (head != NULL) {
+        do {
+            count++;
+            current = current->next;
+        } while(current != head);
+    }
+
+    return count;
+}
+
+void insert_at_beginning(Node **head, int value) {
+    Node *new_node = create_node(value);
+
     if (*head == NULL) {
-        // Se a lista estiver vazia, o novo nó aponta para si mesmo
-        new_node->next = new_node;
         *head = new_node;
     } else {
-        // Se a lista não estiver vazia, o novo nó se torna o primeiro e aponta para o antigo primeiro nó
         new_node->next = *head;
-        
-        // Atualiza o último nó para apontar para o novo primeiro nó
-        Node *temp = *head;
-        while (temp->next != *head) {  // Percorre até o último nó
-            temp = temp->next;
-        }
-        temp->next = new_node;  // O último nó aponta para o novo nó
-        *head = new_node;       // Atualiza a cabeça da lista
+        new_node->prev = (*head)->prev;
+        (*head)->prev->next = new_node;
+        (*head)->prev = new_node;
+        *head = new_node;
     }
+}
+
+void insert_at_middle(Node **head, int value) {
+    Node *new_node = create_node(value);
+    Node *current = *head;
+    int size = traverse(*head);
+    int mid = size / 2;
+
+    for (int i = 0; i < mid; i++) { 
+        current = current->next;
+    }
+
+    new_node->next = current;
+    new_node->prev = current->prev;
+    current->prev->next = new_node;
+    current->prev = new_node;
+}
+
+void insert_at_end(Node **head, int value) {
+    Node *new_node = create_node(value);
+    if (*head == NULL) {
+        *head = new_node;
+    } else {
+        new_node->next = *head;
+        new_node->prev = (*head)->prev;
+        (*head)->prev->next = new_node;
+        (*head)->prev = new_node;
+    }
+}
+
+void delete(Node **head, int value) {
+    if (*head == NULL) {
+        printf("List is empty.\n");
+        return;
+    }
+
+    Node *current = *head;
+
+    do {
+        if (current->data == value) {
+            if (current == *head) {
+                *head = current->next;
+            }
+            current->prev->next = current->next;
+            current->next->prev = current->prev;
+            free(current);
+            return;
+        }
+        current = current->next;
+    } while (current != *head);
 }
 
 void print_list(Node *head) {
     if (head == NULL) {
-        printf("A lista esta vazia.\n");
+        printf("List is empty.\n");
         return;
     }
-    
-    Node *current = head;
-    do {
-        printf("%d -> ", current->value);
-        current = current->next;
-    } while (current != head);  // Quando voltar para o primeiro nó, o loop para
 
-    printf("(circular)\n");
+    Node *current = head;
+    printf("List: ");
+    do {
+        printf("%d -> ", current->data);
+        current = current->next;
+    } while(current != head);
+    printf("(head)\n");
 }
 
 int main() {
     Node *head = NULL;
 
-    insert_at_beginning(&head, 10);
-    insert_at_beginning(&head, 20);
     insert_at_beginning(&head, 30);
-    insert_at_beginning(&head, 40);
-
+    insert_at_beginning(&head, 20);
+    insert_at_beginning(&head, 10);
+    print_list(head);
+    insert_at_end(&head, 40);
+    insert_at_middle(&head, 100);
+    print_list(head);
+    
+    delete(&head, 100);
     print_list(head);
 
     return 0;
