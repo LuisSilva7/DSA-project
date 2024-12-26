@@ -17,8 +17,8 @@ Mastering data structures and algorithms is crucial for any software developer, 
 - **Trees**: Binary trees, binary search trees, AVL trees, and common tree traversals (preorder, inorder, postorder).
 - **Heaps**: Min-heaps and max-heaps, with applications such as heap sort.
 - **Sorting Algorithms**: Implementations of common sorting algorithms like bubble sort, quicksort, merge sort, and others.
-- **Search Algorithms**: Search techniques like linear search, binary search, jump search, and more.
-- **Graph Algorithms**: Breadth-First Search (BFS), Depth-First Search (DFS), and graph representations (adjacency list, matrix).
+- **Search Algorithms**: Search techniques like linear search, binary search, and more.
+- **Graph Algorithms**: Breadth-First Search (BFS), Depth-First Search (DFS), and more.
 
 ## How to Run the Project Locally
 
