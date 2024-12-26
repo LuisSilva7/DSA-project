@@ -1,55 +1,43 @@
 #include <stdio.h>
 
-void swap(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
+// Time Complexity: O(n^2)
 int partition(int arr[], int low, int high) {
-    int pivot = arr[high]; // Escolhe o último elemento como pivô
-    int i = low - 1;       // Índice do menor elemento
+    int pivot = arr[high];
+    int i = low - 1;
 
     for (int j = low; j < high; j++) {
-        if (arr[j] <= pivot) { // Se o elemento atual é menor ou igual ao pivô
+        if (arr[j] < pivot) {
             i++;
-            swap(&arr[i], &arr[j]); // Troca os elementos
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
         }
     }
-    // Troca o pivô para sua posição correta
-    swap(&arr[i + 1], &arr[high]);
-    return (i + 1); // Retorna o índice do pivô
+
+    int temp = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = temp;
+    return i + 1;
 }
 
-void quicksort(int arr[], int low, int high) {
+void quickSort(int arr[], int low, int high) {
     if (low < high) {
-        // Particiona o array e obtém o índice do pivô
         int pi = partition(arr, low, high);
-
-        // Ordena recursivamente os sub-arrays
-        quicksort(arr, low, pi - 1);
-        quicksort(arr, pi + 1, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
     }
-}
-
-void print_array(int arr[], int size) {
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
 }
 
 int main() {
-    int arr[] = {10, 80, 30, 90, 40, 50, 70};
-    int size = sizeof(arr) / sizeof(arr[0]);
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    quickSort(arr, 0, n - 1);
 
-    printf("Array antes da ordenacao:\n");
-    print_array(arr, size);
-
-    quicksort(arr, 0, size - 1);
-
-    printf("Array depois da ordenacao:\n");
-    print_array(arr, size);
+    printf("Sorted array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
 
     return 0;
 }

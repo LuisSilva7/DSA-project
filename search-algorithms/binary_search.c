@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// O(log n) time complexity if the array is sorted
+// Complexity: O(log n) if the array is sorted
 int binarySearch(int arr[], int left, int right, int target) {
     while (left <= right) {
         int mid = left + (right - left) / 2;
