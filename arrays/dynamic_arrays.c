@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Complexity: O(n)
 void initialize_dynamic_array(int **arr, int size) {
     *arr = (int *)malloc(size * sizeof(int));
     if(*arr == NULL) {
@@ -12,12 +13,14 @@ void initialize_dynamic_array(int **arr, int size) {
     }
 };
 
+// Complexity: O(n)
 void print_dynamic_array(int *arr, int size) {
     for (int i = 0; i < size; i++) {
         printf("Element at index %d: %d\n", i, arr[i]);
     }
 }
 
+// Complexity: O(n)
 void resize_dynamic_array(int **arr, int new_size) {
     *arr = (int *)realloc(*arr, new_size * sizeof(int));
     if (*arr == NULL) {
@@ -31,6 +34,7 @@ void resize_dynamic_array(int **arr, int new_size) {
     }
 }
 
+// Complexity: O(1)
 void free_dynamic_array(int *arr) {
     free(arr);
     arr = NULL;
