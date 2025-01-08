@@ -4,10 +4,6 @@
 
 This project aims to provide a comprehensive collection of common data structures and algorithms (DSA) implemented in C. It covers a wide range of essential concepts, including arrays, linked lists, stacks, queues, trees, sorting and searching algorithms, and more.
 
-## Why? (Motivation / Problem to Solve)
-
-Mastering data structures and algorithms is crucial for any software developer, as they form the foundation for solving complex problems efficiently. This project helps to understand how various data structures and algorithms work under the hood, focusing on implementing them in C, a low-level language. The goal is to solidify understanding and provide a reference for solving coding challenges and preparing for technical interviews. It serves as both a learning tool for beginners and a reference for experienced developers to refresh their knowledge and improve their problem-solving skills.
-
 ## Features
 
 - **Arrays**: Basic operations such as insertion, deletion, searching, and manipulation of one-dimensional and multi-dimensional arrays.
