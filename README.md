@@ -42,7 +42,3 @@ This project aims to provide a comprehensive collection of common data structure
    ```bash
    ../compile_execute.sh singly_linked_list.c
    ```
-
-### Maintainer
-
-- **Luis Silva** (Owner/Developer)
